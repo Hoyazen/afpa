@@ -23,7 +23,8 @@ public class LesTableaux {
         int[] array1 = { 1, 3, 4, 5 };
         int[] array2 = { 2, 4, 6, 8 };
         // additionTableau(array1, array2);
-        operationsTableaux(array1, array2);
+        // operationsTableaux(array1, array2);
+        fusionTableaux(array1, array2);
 
         scanner.close();
     }
@@ -238,6 +239,37 @@ public class LesTableaux {
 
     public static void fusionTableaux(int[] array1, int[] array2) {
 
-    }
+        int[] resultat = new int[array1.length + array2.length];
 
+        int i = 0;
+        int j = 0;
+        int k = 0;
+
+        while (i < array1.length && j < array2.length) {
+            if (array1[i] <= array2[j]) {
+                resultat[k] = array1[i];
+                i++;
+            } else {
+                resultat[k] = array2[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < array1.length) {
+            resultat[k] = array1[i];
+            i++;
+            k++;
+        }
+
+        while (j < array2.length) {
+            resultat[k] = array2[j];
+            j++;
+            k++;
+        }
+
+        for (int x = 0; x < resultat.length; x++) {
+            System.out.print(resultat[x] + " ");
+        }
+    }
 }
