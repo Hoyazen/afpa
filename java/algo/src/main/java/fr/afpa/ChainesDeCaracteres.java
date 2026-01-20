@@ -10,7 +10,8 @@ public class ChainesDeCaracteres {
         // decompteMajuscules(scanner);
         // passageMajuscules(scanner);
         // inversionChaine(scanner);
-        transformationCamelCase(scanner);
+        // transformationCamelCase(scanner);
+        tableauUnePhrase(scanner);
 
         scanner.close();
     }
@@ -91,6 +92,15 @@ public class ChainesDeCaracteres {
         }
 
         System.out.println(resultat.toString());
+    }
+
+    public static void tableauUnePhrase(Scanner scanner) {
+        String[] tableauPhrase = { "String", "for", "ever" };
+
+        for (String mot : tableauPhrase) {
+            System.out.print(mot + " ");
+        }
+
     }
 
 }
