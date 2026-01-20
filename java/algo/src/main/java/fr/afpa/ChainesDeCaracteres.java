@@ -7,7 +7,8 @@ public class ChainesDeCaracteres {
         Scanner scanner = new Scanner(System.in);
 
         // decompteVoyelles(scanner);
-        decompteMajuscules(scanner);
+        // decompteMajuscules(scanner);
+        passageMajuscules(scanner);
 
         scanner.close();
     }
@@ -46,5 +47,14 @@ public class ChainesDeCaracteres {
         }
 
         System.out.println("Il y a " + compteur + " de majuscules dans votre phrase");
+    }
+
+    public static void passageMajuscules(Scanner scanner) {
+        System.out.println("Je vais mettre votre phrase en majuscule :");
+        String phraseUtilisateur = scanner.nextLine();
+
+        String phraseUtilisateurMajuscules = phraseUtilisateur.toUpperCase();
+
+        System.out.println(phraseUtilisateurMajuscules);
     }
 }
