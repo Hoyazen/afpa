@@ -8,7 +8,8 @@ public class ChainesDeCaracteres {
 
         // decompteVoyelles(scanner);
         // decompteMajuscules(scanner);
-        passageMajuscules(scanner);
+        // passageMajuscules(scanner);
+        inversionChaine(scanner);
 
         scanner.close();
     }
@@ -56,5 +57,14 @@ public class ChainesDeCaracteres {
         String phraseUtilisateurMajuscules = phraseUtilisateur.toUpperCase();
 
         System.out.println(phraseUtilisateurMajuscules);
+    }
+
+    public static void inversionChaine(Scanner scanner) {
+        System.out.println("Je vais inverser votre phrase :");
+        String phraseUtilisateur = scanner.nextLine();
+
+        String phraseUtilisateurInversee = new StringBuilder(phraseUtilisateur).reverse().toString();
+
+        System.out.println(phraseUtilisateurInversee);
     }
 }
