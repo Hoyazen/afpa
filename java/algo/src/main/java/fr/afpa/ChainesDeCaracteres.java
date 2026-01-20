@@ -9,7 +9,8 @@ public class ChainesDeCaracteres {
         // decompteVoyelles(scanner);
         // decompteMajuscules(scanner);
         // passageMajuscules(scanner);
-        inversionChaine(scanner);
+        // inversionChaine(scanner);
+        transformationCamelCase(scanner);
 
         scanner.close();
     }
@@ -67,4 +68,29 @@ public class ChainesDeCaracteres {
 
         System.out.println(phraseUtilisateurInversee);
     }
+
+    public static void transformationCamelCase(Scanner scanner) {
+        System.out.println("Je vais supprimer les espaces :");
+        String phraseUtilisateur = scanner.nextLine();
+
+        int taillePhraseUtilisateur = phraseUtilisateur.length();
+
+        StringBuilder resultat = new StringBuilder();
+
+        boolean nouveauMot = true;
+
+        for (int i = 0; i < taillePhraseUtilisateur; i++) {
+            char phraseUtilisateurCharacter = phraseUtilisateur.charAt(i);
+
+            if (Character.isLetter(phraseUtilisateurCharacter)) {
+                resultat.append(phraseUtilisateurCharacter);
+                nouveauMot = false;
+            } else {
+                nouveauMot = true;
+            }
+        }
+
+        System.out.println(resultat.toString());
+    }
+
 }
