@@ -8,7 +8,8 @@ public class tableaux2D {
 
         // analyseAlgorithme1(scanner);
         // analyseAlgorithme2(scanner);
-        analyseAlgorithme3(scanner);
+        // analyseAlgorithme3(scanner);
+        analyseAlgorithme4(scanner);
 
         scanner.close();
     }
@@ -32,15 +33,15 @@ public class tableaux2D {
         int[][] tableau = new int[2][3];
         int val = 1;
 
-        for(int i = 0; i < 1; i++) {
-            for(int j = 0; j < 2; j++) {
+        for(int i = 0; i < 2; i++) {
+            for(int j = 0; j < 3; j++) {
                 tableau[i][j] = val;
                 val = val + 1;
             }
         }
 
-        for(int i = 0; i < 1; i++) {
-            for(int j = 0; j < 2; j++) {
+        for(int i = 0; i < 2; i++) {
+            for(int j = 0; j < 3; j++) {
                 System.out.println(tableau[i][j]);
             }
         }
@@ -50,16 +51,32 @@ public class tableaux2D {
         int[][] tableau = new int[2][3];
         int val = 1;
 
-        for(int i = 0; i < 1; i++) {
-            for(int j = 0; j < 2; j++) {
+        for(int i = 0; i < 2; i++) {
+            for(int j = 0; j < 3; j++) {
                 tableau[i][j] = val;
                 val = val + 1;
             }
         }
 
-        for(int j = 0; j < 2; j++) {
-            for(int i = 0; i < 1; i++) {
+        for(int j = 0; j < 3; j++) {
+            for(int i = 0; i < 2; i++) {
                 System.out.println(tableau[i][j]);
+            }
+        }
+    }
+
+    public static void analyseAlgorithme4(Scanner scanner) {
+        int[][] tableau = new int[4][2];
+
+        for (int k = 0; k < 4; k ++) {
+            for (int m = 0; m < 2; m++) {
+                tableau[k][m] = k + m;
+            }
+        }
+
+        for (int k = 0; k < 4; k++) {
+            for (int m = 0; m < 2; m++) {
+                System.out.println(tableau[k][m]);
             }
         }
     }
