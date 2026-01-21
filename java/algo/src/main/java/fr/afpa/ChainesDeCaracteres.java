@@ -241,7 +241,7 @@ public class ChainesDeCaracteres {
 
         String resultat = "";
 
-        int comparaison1 = entreeUtilisateur1.compareTo(entreeUtilisateur2);
+        int comparaison1 = entreeUtilisateur1.compareTo(entreeUtilisateur2); // compare to renvoie < 0(ordre  ok premier mot inférieur au deuxième) || 0(deux mots pareils) || > 0(premier mot supérieur au deuxième)
         int comparaison2 = entreeUtilisateur2.compareTo(entreeUtilisateur3);
 
         if (comparaison1 <= 0 && comparaison2 <= 0) {
