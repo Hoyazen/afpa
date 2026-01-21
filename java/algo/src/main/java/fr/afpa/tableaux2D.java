@@ -10,7 +10,8 @@ public class tableaux2D {
         // analyseAlgorithme2(scanner);
         // analyseAlgorithme3(scanner);
         // analyseAlgorithme4(scanner);
-        analyseAlgorithme5(scanner);
+        // analyseAlgorithme5(scanner);
+        affichageTableau(scanner);
 
         scanner.close();
     }
@@ -109,6 +110,30 @@ public class tableaux2D {
             for (int m = 0; m < 2; m++) {
                 System.out.println(tableau[k][m]);
             }
+        }
+    }
+
+    public static void affichageTableau(Scanner scanner) {
+        int[][] tableau = new int[3][4];
+        tableau[0][0] = 13;
+        tableau[0][1] = 44;
+        tableau[0][2] = 231;
+        tableau[0][3] = 12;
+        tableau[1][0] = 0;
+        tableau[1][1] = 0;
+        tableau[1][2] = 2;
+        tableau[1][3] = 0;
+        tableau[2][0] = 56;
+        tableau[2][1] = 87;
+        tableau[2][2] = 9;
+        tableau[2][3] = 19;
+
+        for (int i = 0; i < tableau.length; i++) {
+            for (int j = 0; j < tableau[i].length; j++) {
+                System.out.print(tableau[i][j] + " ");
+            }
+
+            System.out.println();
         }
     }
 }
