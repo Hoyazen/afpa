@@ -13,7 +13,8 @@ public class ChainesDeCaracteres {
         // inversionChaine(scanner);
         // transformationCamelCase(scanner);
         // tableauUnePhrase(scanner);
-        palindrome(scanner);
+        // palindrome(scanner);
+        suppressionCaracteres(scanner);
 
         scanner.close();
     }
@@ -132,5 +133,30 @@ public class ChainesDeCaracteres {
         }
 
         System.out.println(phraseUtilisateur + " est palindrome");
+    }
+
+    public static void suppressionCaracteres(Scanner scanner) {
+        System.out.println("Une phrase :");
+        String phraseUtilisateur = scanner.nextLine();
+
+        int phraseUtilisateurLongueur = phraseUtilisateur.length();
+
+        System.out.println("Un caractère à supprimer :");
+        String caractereUtilisateur = scanner.nextLine();
+
+        char caractereUtilisateurRecupere = caractereUtilisateur.charAt(0);
+        StringBuilder resultat = new StringBuilder();
+
+        int i = 0;
+
+        for (; i < phraseUtilisateurLongueur; i++) {
+            char caracterePhraseUtilisateur = phraseUtilisateur.charAt(i);
+
+            if (caracterePhraseUtilisateur != caractereUtilisateurRecupere) {
+                resultat.append(caracterePhraseUtilisateur);
+            }
+        }
+
+        System.out.println(resultat);
     }
 }

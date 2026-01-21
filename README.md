@@ -2,7 +2,7 @@
 
 ## Du 12/01/2026 au 23/01/2026
 
-Exercices d'algorithmie en JAVA - Les débuts - [ICI](https://github.com/Hoyazen/afpa/tree/main/java/algo/src/main/java/fr/afpa).
+Exercices d'algorithmie en JAVA - Les débuts - [Tous les exercices](https://github.com/Hoyazen/afpa/tree/main/java/algo/src/main/java/fr/afpa).
 
 | Variables et opérateurs | Structures Alternatives | Structures Itératives | Fonctions |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
