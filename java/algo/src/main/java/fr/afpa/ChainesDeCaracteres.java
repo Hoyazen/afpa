@@ -14,7 +14,8 @@ public class ChainesDeCaracteres {
         // transformationCamelCase(scanner);
         // tableauUnePhrase(scanner);
         // palindrome(scanner);
-        suppressionCaracteres(scanner);
+        // suppressionCaracteres(scanner);
+        localisationSousChaine(scanner);
 
         scanner.close();
     }
@@ -159,4 +160,43 @@ public class ChainesDeCaracteres {
 
         System.out.println(resultat);
     }
+
+    public static void localisationSousChaine(Scanner scanner) {
+        System.out.println("Choisis une phrase :");
+        String phraseUtilisateur = scanner.nextLine();
+
+        System.out.println("La sous chaine à localiser :");
+        String phraseLocalisateur = scanner.nextLine();
+
+        int phraseUtilisateurStockee = phraseUtilisateur.length();
+        int phraseLocalisateurStockee = phraseLocalisateur.length();
+
+        int iDebut = -1;
+        int iFin = -1;
+
+        for (int i = 0; i <= phraseUtilisateurStockee - phraseLocalisateurStockee; i++) {
+
+            boolean trouve = true;
+
+            for (int j = 0; j < phraseLocalisateurStockee; j++) {
+                char caracterePhraseUtilisateur = phraseUtilisateur.charAt(i + j);
+                char caractereLocalisateur = phraseLocalisateur.charAt(j);
+
+                if (caracterePhraseUtilisateur != caractereLocalisateur) {
+                    trouve = false;
+                    break;
+                }
+            }
+
+            if (trouve) {
+                iDebut = i;
+                iFin = i + phraseLocalisateurStockee - 1;
+                break;
+            }
+        }
+
+        System.out.println("Premier index : " + iDebut);
+        System.out.println("Dernier index : " + iFin);
+    }
+
 }
