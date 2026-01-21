@@ -7,7 +7,8 @@ public class tableaux2D {
         Scanner scanner = new Scanner(System.in);
 
         // analyseAlgorithme1(scanner);
-        analyseAlgorithme2(scanner);
+        // analyseAlgorithme2(scanner);
+        analyseAlgorithme3(scanner);
 
         scanner.close();
     }
@@ -40,6 +41,24 @@ public class tableaux2D {
 
         for(int i = 0; i < 1; i++) {
             for(int j = 0; j < 2; j++) {
+                System.out.println(tableau[i][j]);
+            }
+        }
+    }
+
+    public static void analyseAlgorithme3(Scanner scanner) {
+        int[][] tableau = new int[2][3];
+        int val = 1;
+
+        for(int i = 0; i < 1; i++) {
+            for(int j = 0; j < 2; j++) {
+                tableau[i][j] = val;
+                val = val + 1;
+            }
+        }
+
+        for(int j = 0; j < 2; j++) {
+            for(int i = 0; i < 1; i++) {
                 System.out.println(tableau[i][j]);
             }
         }
