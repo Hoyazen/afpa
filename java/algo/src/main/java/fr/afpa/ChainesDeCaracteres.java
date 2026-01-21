@@ -15,7 +15,8 @@ public class ChainesDeCaracteres {
         // tableauUnePhrase(scanner);
         // palindrome(scanner);
         // suppressionCaracteres(scanner);
-        localisationSousChaine(scanner);
+        // localisationSousChaine(scanner);
+        validationEmail(scanner);
 
         scanner.close();
     }
@@ -197,6 +198,31 @@ public class ChainesDeCaracteres {
 
         System.out.println("Premier index : " + iDebut);
         System.out.println("Dernier index : " + iFin);
+    }
+
+    public static void validationEmail(Scanner scanner) {
+        System.out.println("Veuillez entrez un email valide :");
+        String entreeUtilisateur = scanner.nextLine();
+
+        int positionArobase = entreeUtilisateur.indexOf('@');
+        int positionPoint = entreeUtilisateur.indexOf('.');
+
+        boolean resultat = true;
+
+        if (positionArobase == -1 || positionPoint == -1) { // le -1 me permet de dire que le caractère est absent
+            resultat = false;
+        }
+
+        if (positionArobase > positionPoint) {
+            resultat = false;
+        }
+
+        if (resultat) {
+            System.out.println("valide");
+        } else {
+            System.out.println("non valide");
+        }
+
     }
 
 }
