@@ -11,6 +11,6 @@ Exercices d'algorithmie en JAVA - Les débuts - [ICI](https://github.com/Hoyazen
 | [Opérateurs de concaténation](https://github.com/Hoyazen/afpa/blob/main/java/algo/src/main/java/fr/afpa/OperateursConcatenations.java) | | | |
 | [Saisie utilisateur](https://github.com/Hoyazen/afpa/blob/main/java/algo/src/main/java/fr/afpa/SaisieUtilisateur.java) | | | |
 
-| Tableaux 1D |
-| ----------------------- |
-| [Les tableaux 1D](https://github.com/Hoyazen/afpa/blob/main/java/algo/src/main/java/fr/afpa/LesTableaux.java) |
+| Tableaux 1D | Chaines de caractères |
+| ----------------------- | ----------------------- |
+| [Les tableaux 1D](https://github.com/Hoyazen/afpa/blob/main/java/algo/src/main/java/fr/afpa/LesTableaux.java) | [Les chaines de caractères](https://github.com/Hoyazen/afpa/blob/main/java/algo/src/main/java/fr/afpa/ChainesDeCaracteres.java) |
