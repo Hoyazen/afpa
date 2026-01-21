@@ -1,6 +1,7 @@
 package fr.afpa;
 
 import java.util.Scanner;
+import java.text.Normalizer;
 
 public class ChainesDeCaracteres {
     public static void main(String[] args) {
@@ -11,7 +12,8 @@ public class ChainesDeCaracteres {
         // passageMajuscules(scanner);
         // inversionChaine(scanner);
         // transformationCamelCase(scanner);
-        tableauUnePhrase(scanner);
+        // tableauUnePhrase(scanner);
+        palindrome(scanner);
 
         scanner.close();
     }
@@ -103,4 +105,32 @@ public class ChainesDeCaracteres {
 
     }
 
+    public static void palindrome(Scanner scanner) {
+        System.out.println("Choisis une phrase et je te dis si elle est palindrome ou non :");
+        String phraseUtilisateur = scanner.nextLine();
+
+        String phraseNettoyee = Normalizer.normalize(phraseUtilisateur, Normalizer.Form.NFD)
+        .replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
+        .replaceAll("[^a-zA-Z]", "")
+        .toLowerCase();
+
+        // System.out.println(phraseNettoyee);
+
+        int longueurPhraseNettoyeeUtilisateur = phraseNettoyee.length();
+
+        int i = 0;
+        int y = longueurPhraseNettoyeeUtilisateur - 1;
+            
+        for (; i <= y; i++, y--) {
+            char lettreGauche = phraseNettoyee.charAt(i);
+            char lettreDroite = phraseNettoyee.charAt(y);
+
+            if (lettreGauche != lettreDroite) {
+                System.out.println("Ce n'est pas palindrome");
+                return;
+            }
+        }
+
+        System.out.println(phraseUtilisateur + " est palindrome");
+    }
 }
