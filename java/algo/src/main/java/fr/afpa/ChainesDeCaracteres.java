@@ -16,7 +16,8 @@ public class ChainesDeCaracteres {
         // palindrome(scanner);
         // suppressionCaracteres(scanner);
         // localisationSousChaine(scanner);
-        validationEmail(scanner);
+        // validationEmail(scanner);
+        ordreAlphabetique(scanner);
 
         scanner.close();
     }
@@ -222,6 +223,34 @@ public class ChainesDeCaracteres {
         } else {
             System.out.println("non valide");
         }
+
+    }
+
+    public static void ordreAlphabetique(Scanner scanner) {
+        System.out.println("1ère phrase :");
+        String entreeUtilisateur1 = scanner.nextLine();
+        entreeUtilisateur1 = entreeUtilisateur1.toLowerCase();
+
+        System.out.println("2ème phrase :");
+        String entreeUtilisateur2 = scanner.nextLine();
+        entreeUtilisateur2 = entreeUtilisateur2.toLowerCase();
+
+        System.out.println("3ème phrase :");
+        String entreeUtilisateur3 = scanner.nextLine();
+        entreeUtilisateur3 = entreeUtilisateur3.toLowerCase();
+
+        String resultat = "";
+
+        int comparaison1 = entreeUtilisateur1.compareTo(entreeUtilisateur2);
+        int comparaison2 = entreeUtilisateur2.compareTo(entreeUtilisateur3);
+
+        if (comparaison1 <= 0 && comparaison2 <= 0) {
+            resultat = "Les mots sont dans l'ordre alphabétique";
+        } else {
+            resultat = "Pas dans l'odre alphabétique";
+        }
+
+        System.out.println(resultat);
 
     }
 
