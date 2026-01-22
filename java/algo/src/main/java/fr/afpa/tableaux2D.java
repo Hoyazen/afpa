@@ -12,7 +12,8 @@ public class tableaux2D {
         // analyseAlgorithme4(scanner);
         // analyseAlgorithme5(scanner);
         // affichageTableau(scanner);
-        initialisationTableau(scanner);
+        // initialisationTableau(scanner);
+        valeurMaximale(scanner);
 
         scanner.close();
     }
@@ -149,5 +150,29 @@ public class tableaux2D {
             System.out.println();
         }
 
+    }
+
+    public static void valeurMaximale(Scanner scanner) {
+        int[][] tableau = new int[3][3];
+
+        for (int i = 0; i < tableau.length; i ++) {
+            for (int j = 0; j < tableau[i].length; j ++) {
+                tableau[i][j] = (int)(Math.random() * 100);
+                System.out.print(tableau[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int max = tableau[0][0];
+
+        for (int i = 0; i < tableau.length; i ++) {
+            for (int j = 0; j < tableau[i].length; j ++) {
+                if (tableau[i][j] > max) {
+                    max = tableau[i][j];
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("La valeur max est : " + max);
     }
 }
