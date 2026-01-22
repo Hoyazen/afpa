@@ -11,7 +11,8 @@ public class LesFonctions {
         // subtract(2, 2);
         // sommeEntiers(2);
         // factorial(3;)
-        maxDesTrois(0, 0, 0);
+        // maxDesTrois(0, 0, 0);
+        isEven(3);
 
         scanner.close();
     }
@@ -64,6 +65,18 @@ public class LesFonctions {
         }
 
         return max;
+    }
+
+    public static boolean isEven(int a) {
+        boolean pairImpair = true;
+
+        if (a % 2 == 0) {
+            System.out.println("Est pair");
+        } else {
+            System.out.println("Impair");
+        }
+
+        return pairImpair;
     }
 
 }
