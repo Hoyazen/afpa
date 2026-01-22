@@ -14,6 +14,7 @@ public class LesFonctions {
         // maxDesTrois(0, 0, 0);
         // isEven(2);
         System.out.println(fullName("Simon", "Adrien"));
+        System.out.println(fullName2("Simon", "Adrien", "Adrien2"));
 
         scanner.close();
     }
@@ -81,9 +82,11 @@ public class LesFonctions {
     }
 
     public static String fullName(String nom, String prenom) {
-        String fullName = nom + " " + prenom;
-        
-        return fullName;
-    }    
+        return nom + " " + prenom;
+    }
+
+    public static String fullName2(String nom, String prenom, String prenom2) {
+        return prenom + " " + prenom2 + " " + nom;
+    }
 
 }
