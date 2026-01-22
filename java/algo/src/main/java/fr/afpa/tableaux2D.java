@@ -13,7 +13,8 @@ public class tableaux2D {
         // analyseAlgorithme5(scanner);
         // affichageTableau(scanner);
         // initialisationTableau(scanner);
-        valeurMaximale(scanner);
+        // valeurMaximale(scanner);
+        sommeTableau(scanner);
 
         scanner.close();
     }
@@ -174,5 +175,27 @@ public class tableaux2D {
         }
         System.out.println();
         System.out.println("La valeur max est : " + max);
+    }
+
+    public static void sommeTableau(Scanner scanner) {
+        int[][] tableau = new int[3][3];
+
+        for (int i = 0; i < tableau.length; i ++) {
+            for (int j = 0; j < tableau[i].length; j ++) {
+                tableau[i][j] = (int)(Math.random() * 100);
+                System.out.print(tableau[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int valeur = 0;
+
+        for (int i = 0; i < tableau.length; i ++) {
+            for (int j = 0; j < tableau[i].length; j ++) {
+                valeur = valeur + tableau[i][j];
+            }
+        }
+        System.out.println();
+        System.out.println("Le tout donne : " + valeur);
     }
 }
