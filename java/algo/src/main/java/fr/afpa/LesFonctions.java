@@ -12,7 +12,8 @@ public class LesFonctions {
         // sommeEntiers(2);
         // factorial(3;)
         // maxDesTrois(0, 0, 0);
-        isEven(3);
+        // isEven(2);
+        System.out.println(fullName("Simon", "Adrien"));
 
         scanner.close();
     }
@@ -68,15 +69,21 @@ public class LesFonctions {
     }
 
     public static boolean isEven(int a) {
-        boolean pairImpair = true;
+        boolean pair;
 
         if (a % 2 == 0) {
-            System.out.println("Est pair");
+            pair = true;
         } else {
-            System.out.println("Impair");
+            pair = false;
         }
 
-        return pairImpair;
+        return pair;
     }
+
+    public static String fullName(String nom, String prenom) {
+        String fullName = nom + " " + prenom;
+        
+        return fullName;
+    }    
 
 }
