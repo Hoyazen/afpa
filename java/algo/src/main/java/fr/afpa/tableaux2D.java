@@ -14,7 +14,8 @@ public class tableaux2D {
         // affichageTableau(scanner);
         // initialisationTableau(scanner);
         // valeurMaximale(scanner);
-        sommeTableau(scanner);
+        // sommeTableau(scanner);
+        diagonalesTableaux(scanner);
 
         scanner.close();
     }
@@ -198,4 +199,29 @@ public class tableaux2D {
         System.out.println();
         System.out.println("Le tout donne : " + valeur);
     }
-}
+
+    public static void diagonalesTableaux(Scanner scanner) {
+        int[][] array2D = {
+                {4, 6, 5, 2},
+                {7, 11, 34, 1},
+                {28, 6, 2, 15},
+                {1, 2, 3, 19}
+            };
+
+            int width = 4;
+            int height = 4;
+            int diagonalType = 1;
+
+            int somme = 0;
+
+            for (int i = 0; i < height; i++) {
+                if (diagonalType == 1) {
+                    somme += array2D[i][i];
+                } else if (diagonalType == 2) {
+                    somme += array2D[i][width - 1 - i];
+                }
+            }
+
+            System.out.println("Somme de la diagonale " + diagonalType + " = " + somme);
+        }
+    }
