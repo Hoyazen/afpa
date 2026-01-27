@@ -4,7 +4,7 @@ public class algorithmesBases {
     public static void main(String[] args) {
         int[] tab = {42, 7, 19, 3, 88};
 
-        triBulle(tab);
+        triSelection(tab);
         
         for (int i = 0; i < tab.length; i++) {
             System.out.print(tab[i] + " ");
@@ -23,5 +23,9 @@ public class algorithmesBases {
                 }
             }
         }
+    }
+
+    public static void triSelection(int[] tab) {
+        
     }
 }
