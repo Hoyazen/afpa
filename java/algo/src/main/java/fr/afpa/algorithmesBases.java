@@ -9,6 +9,10 @@ public class algorithmesBases {
         for (int i = 0; i < tab.length; i++) {
             System.out.print(tab[i] + " ");
         }
+
+        int[] tableau = {42, 7, 19, 3, 88};
+
+        triBulle(tableau);
     }
 
     public static void triBulle(int[] tab) {
@@ -25,7 +29,19 @@ public class algorithmesBases {
         }
     }
 
-    public static void triSelection(int[] tab) {
-        
+    public static void triSelection(int[] tableau) {
+        int n = tableau.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+
+                if (tableau[i] > tableau[j]) {
+
+                    int temp = tableau[i];
+                    tableau[i] = tableau[j];
+                    tableau[j] = temp;
+                }
+            }
+        }
     }
 }

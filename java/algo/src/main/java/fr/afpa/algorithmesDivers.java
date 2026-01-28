@@ -1,5 +1,6 @@
 package fr.afpa;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class algorithmesDivers {
@@ -11,7 +12,10 @@ public class algorithmesDivers {
 
         // triangleCaracteres(scanner);
 
-        trianglesCaracteresV2(scanner);
+        // trianglesCaracteresV2(scanner);
+
+        isValid(null);
+        System.out.println(isValid(new BigInteger("4223982640269299")));
 
         scanner.close();
     }
@@ -61,4 +65,34 @@ public class algorithmesDivers {
             System.out.println(resultat);
         }
     }
+
+    public static boolean isValid(BigInteger cardNumber) {
+
+        if (cardNumber == null) {
+            return false;
+        }
+
+        int somme = 0;
+        boolean doubler = false;
+
+        while (cardNumber.compareTo(BigInteger.ZERO) > 0) {
+
+            int chiffre = cardNumber.mod(BigInteger.TEN).intValue();
+
+            if (doubler) {
+                chiffre = chiffre * 2;
+
+                if (chiffre > 9) {
+                    chiffre = (chiffre / 10) + (chiffre % 10);
+                }
+            }
+
+            somme += chiffre;
+            doubler = !doubler;
+            cardNumber = cardNumber.divide(BigInteger.TEN);
+        }
+
+        return somme % 10 == 0;
+    }
+
 }
