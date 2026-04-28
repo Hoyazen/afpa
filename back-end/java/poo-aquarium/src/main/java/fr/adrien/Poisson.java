@@ -1,0 +1,23 @@
+package fr.adrien;
+
+import fr.adrien.enums.Sexe;
+
+public class Poisson extends EtreVivant{
+    private String nom;
+    private Sexe sexe;
+
+    public Poisson(String nom, Sexe sexe) {
+        super(10, 0);
+        this.nom = nom;
+        this.sexe = sexe;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public Sexe getSexe() {
+        return sexe;
+    }
+
+}
