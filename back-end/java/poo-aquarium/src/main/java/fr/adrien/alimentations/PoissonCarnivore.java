@@ -10,8 +10,8 @@ public abstract class PoissonCarnivore extends Poisson implements Carnivore {
         //TODO Auto-generated constructor stub
     }
 
-     public void mangerPoisson(Poisson poisson) {
-        System.out.println("miam miam" + poisson);
-     }
+    public void mangerPoisson(Poisson poissonProie) {
+        System.out.println("predateur " + this.getNom() + " à mangé " + poissonProie.getNom());
+    }
 
 }

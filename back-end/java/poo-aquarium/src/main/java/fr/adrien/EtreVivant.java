@@ -10,6 +10,22 @@ public abstract class EtreVivant {
         this.age = age;
     }
 
+    public int getPv() {
+        return pv;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setPv(int pv) {
+        this.pv = pv;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public void incrementAge() {
         
     }

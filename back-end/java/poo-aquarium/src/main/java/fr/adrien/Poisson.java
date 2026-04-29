@@ -2,7 +2,7 @@ package fr.adrien;
 
 import fr.adrien.enums.Sexe;
 
-public class Poisson extends EtreVivant{
+public abstract class Poisson extends EtreVivant {
     private String nom;
     private Sexe sexe;
 
@@ -18,6 +18,11 @@ public class Poisson extends EtreVivant{
 
     public Sexe getSexe() {
         return sexe;
+    }
+
+    @Override
+    public String toString() {
+        return "Poisson [nom=" + nom + ", sexe=" + sexe + "]";
     }
 
 }
