@@ -1,5 +1,7 @@
 package fr.adrien.alimentations;
 
-public abstract interface Carnivore {
-    
+import fr.adrien.Poisson;
+
+public interface Carnivore {
+    public void mangerPoisson(Poisson poisson);
 }
