@@ -40,14 +40,14 @@ public class Aquarium {
         boolean over = false;
         Poisson poissonPredateurGagnant = null;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) { // ma boucle du nombre de tour de jeu
 
-            for (int iPoisson = 0; iPoisson < poissons.size(); iPoisson++) {
+            for (int iPoisson = 0; iPoisson < poissons.size(); iPoisson++) { // boucle sur la taille du tableau des poissons
 
-                Poisson poissonPredateur = poissons.get(iPoisson); // Tous les poissons
-                int poissonPredateurHP = poissonPredateur.getPv();
+                Poisson poissonPredateur = poissons.get(iPoisson); // tous les poissons
+                int poissonPredateurHP = poissonPredateur.getPv(); // le .get c'est pour récupérer l'information
                 poissonPredateurHP = poissonPredateurHP - 1;
-                poissonPredateur.setPv(poissonPredateurHP);
+                poissonPredateur.setPv(poissonPredateurHP); // et le .set c'est pour modifier l'information (la sauvegarder) vu qu'on l'a modifié juste avant
                 System.out.println(poissonPredateur.getNom() + " a " + poissonPredateur.getPv() + " pv");
 
                 if (poissonPredateur.getPv() <= 5) {
@@ -55,18 +55,20 @@ public class Aquarium {
                     // if (poissons.get(iPoisson) instanceof PoissonCarnivore poissonPredateur)
                     if (poissonPredateur instanceof PoissonCarnivore) {
 
+                        // le random en JAVA
                         Random rand = new Random();
                         int randomPoissonProieIndex = rand.nextInt(poissons.size());
+
+                        // pour récupérer un poisson random de la liste des poissons
                         Poisson poissonProie = poissons.get(randomPoissonProieIndex);
                         int poissonProieHP = poissonProie.getPv();
 
-                        if (iPoisson == randomPoissonProieIndex) {
+                        if (iPoisson == randomPoissonProieIndex) { // vérification pour pas que le poissons se mange lui même
                             System.out
-                                    .println(poissonPredateur.getNom() + " Impossible de manger "
-                                            + poissonProie.getNom());
+                                    .println(poissonPredateur.getNom() + " Impossible de manger " + poissonProie.getNom());
                         } else {
 
-                            ((PoissonCarnivore) poissonPredateur).mangerPoisson(poissonProie);
+                            ((PoissonCarnivore) poissonPredateur).mangerPoisson(poissonProie); // on met poissons carnivore pour qu'il prenne bien que les poissonsPredateurs carnivores, ce sont les seules qui peuvent manger d'autres poissons (on cast)
                             poissonProieHP = poissonProieHP - 4;
                             poissonProie.setPv(poissonProieHP);
                             System.out.println(poissonProie.getNom() + " a " + poissonProie.getPv() + " pv");
@@ -87,8 +89,11 @@ public class Aquarium {
 
                         // if (algues.get(iAlgue) instanceof PoissonHerbivore poissonPredateur)
                     } else if (poissonPredateur instanceof PoissonHerbivore) {
+
+                        // même logique que le poissonCarnivore pour l'instant
                         Random rand = new Random();
                         int randomAlgueIndex = rand.nextInt(algues.size());
+
                         Algue algueProie = algues.get(randomAlgueIndex);
                         ((PoissonHerbivore) poissonPredateur).mangerAlgue(algueProie);
                         System.out.println("=====================");
