@@ -3,15 +3,25 @@ package fr.adrien.alimentations;
 import fr.adrien.Poisson;
 import fr.adrien.enums.Sexe;
 
-public abstract class PoissonCarnivore extends Poisson implements Carnivore {
+public abstract class PoissonCarnivore extends Poisson {
 
     public PoissonCarnivore(String nom, Sexe sexe) {
         super(nom, sexe);
-        //TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor stub
     }
 
     public void mangerPoisson(Poisson poissonProie) {
-        System.out.println("predateur " + this.getNom() + " à mangé " + poissonProie.getNom());
-    }
 
+        // 1 - gain de HP pour le poisson prédateur
+        int newHPCarnivore = this.getPv() + 5;
+        this.setPv(newHPCarnivore);
+
+        // 2 - perte de HP pour la proie
+        int newProieHP = poissonProie.getPv() - 4;
+        poissonProie.setPv(newProieHP);
+
+        System.out.println("predateur " + this.getNom() + " à mangé " + poissonProie.getNom());
+
+        System.err.println(this.getNom() + " à récupéré " + "5 PV, il a maintenant : " + this.getPv() + " PV");
+    }
 }
