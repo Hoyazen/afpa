@@ -63,6 +63,12 @@ public class Aquarium {
                 if (poissonPredateur.getAge() >= 20) {
                     System.out.println(poissonPredateur.getNom() + " est mort de vieillesse");
                     poissons.remove(i);
+
+                    if (poissons.size() == 1) {
+                        poissonPredateurGagnant = poissons.get(0);
+                        over = true;
+                    }
+
                     continue;
                 }
 
@@ -81,11 +87,12 @@ public class Aquarium {
 
                     if (poissonPredateur instanceof PoissonCarnivore carnivore) {
 
-                        if (poissons.size() <= 1) continue;
+                        if (poissons.size() <= 1)
+                            continue;
 
                         int indexProie = rand.nextInt(poissons.size());
                         Poisson poissonProie = poissons.get(indexProie);
-                        
+
                         if (poissonPredateur == poissonProie) {
                             System.out.println("Impossible de se manger soi-même");
                             continue;
@@ -107,12 +114,17 @@ public class Aquarium {
                         // test après attaque
                         if (poissonProie.getPv() <= 0) {
                             System.out.println(poissonProie.getNom() + " est mort");
-                            poissons.remove(poissonProie);
+
+                            int indexProie2 = poissons.indexOf(poissonProie);
+                            if (indexProie2 != -1) {
+                                poissons.remove(indexProie2); // ✅ correction ici
+                            }
                         }
 
                     } else if (poissonPredateur instanceof PoissonHerbivore herbivore) {
 
-                        if (algues.isEmpty()) continue;
+                        if (algues.isEmpty())
+                            continue;
 
                         int indexAlgue = rand.nextInt(algues.size());
                         Algue algue = algues.get(indexAlgue);

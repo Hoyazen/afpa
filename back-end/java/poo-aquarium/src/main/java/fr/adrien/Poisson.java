@@ -12,7 +12,7 @@ public abstract class Poisson extends EtreVivant {
         super(10, 0);
         this.nom = nom;
         this.sexe = sexe;
-
+        
         Random rand = new Random();
         this.setAge(rand.nextInt(10));
     }

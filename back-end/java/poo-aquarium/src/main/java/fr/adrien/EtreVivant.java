@@ -27,6 +27,6 @@ public abstract class EtreVivant {
     }
 
     public void incrementAge() {
-        
+    
     }
 }
