@@ -21,7 +21,7 @@ public abstract class PoissonCarnivore extends Poisson {
         poissonProie.setPv(newProieHP);
 
         System.out.println("predateur " + this.getNom() + " à mangé " + poissonProie.getNom());
-
         System.err.println(this.getNom() + " à récupéré " + "5 PV, il a maintenant : " + this.getPv() + " PV");
+        System.out.println();
     }
 }

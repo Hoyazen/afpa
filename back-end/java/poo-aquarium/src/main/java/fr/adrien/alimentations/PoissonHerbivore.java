@@ -17,8 +17,8 @@ public abstract class PoissonHerbivore extends Poisson {
         this.setPv(newHPHerbivore);
 
         System.out.println("predateur " + this.getNom() + " à mangé une algue");
-
         System.err.println(this.getNom() + " à récupéré " + "3 PV, il a maintenant : " + this.getPv() + " PV");
+        System.out.println();
     }
 
 }
