@@ -14,18 +14,19 @@ import fr.adrien.poissons.Sole;
 import fr.adrien.poissons.Thon;
 
 public class Aquarium {
+
     public static void main(String[] args) {
 
         ArrayList<Poisson> poissons = new ArrayList<>();
         ArrayList<Algue> algues = new ArrayList<>();
-        Random rand = new Random(); // ✅ un seul Random
+        Random rand = new Random();
 
-        // Création des algues
+        // Initialisation algues
         for (int x = 0; x < 10; x++) {
             algues.add(new Algue());
         }
 
-        // Création des poissons
+        // Initialisation poissons
         poissons.add(new Merou("Maxime", Sexe.MALE));
         poissons.add(new Bar("Josua", Sexe.MALE));
         poissons.add(new Carpe("Esteban", Sexe.MALE));
@@ -41,110 +42,174 @@ public class Aquarium {
         poissons.add(new PoissonClown("Kevinette", Sexe.FEMELLE));
 
         boolean over = false;
-        Poisson poissonPredateurGagnant = null;
+        Poisson gagnant = null;
 
-        for (int tour = 1; tour < 31; tour++) {
+        // Boucle principale
+        for (int tour = 1; tour < 11; tour++) {
 
             System.out.println("---------------");
-            System.out.println("TOUR NUMÉRO " + tour);
-            System.out.println();
+            System.out.println("TOUR NUMERO " + tour);
 
-            // parcours à l'envers pour éviter les bugs de suppression
             for (int i = poissons.size() - 1; i >= 0; i--) {
 
-                Poisson poissonPredateur = poissons.get(i);
+                Poisson poisson = poissons.get(i);
+                boolean aDejaReproduit = false;
 
-                // incrément de l'âge correctement
-                poissonPredateur.setAge(poissonPredateur.getAge() + 1);
+                // Vieillissement
+                poisson.setAge(poisson.getAge() + 1);
+                System.out.println(poisson.getNom() + " vieillit -> âge : " + poisson.getAge());
 
-                System.out.println(poissonPredateur.getNom() + " a " + poissonPredateur.getAge() + " ANS");
+                if (poisson.getAge() >= 20) {
 
-                // mort par vieillesse
-                if (poissonPredateur.getAge() >= 20) {
-                    System.out.println(poissonPredateur.getNom() + " est mort de vieillesse");
+                    System.out.println(poisson.getNom() + " meurt de vieillesse");
                     poissons.remove(i);
 
-                    if (poissons.size() == 1) {
-                        poissonPredateurGagnant = poissons.get(0);
-                        over = true;
-                    }
+                } else {
 
-                    continue;
-                }
+                    // Perte PV
+                    poisson.setPv(poisson.getPv() - 1);
+                    System.out.println(poisson.getNom() + " perd 1 PV -> PV : " + poisson.getPv());
 
-                System.out.println("C'est au tour de " + poissonPredateur.getNom() +
-                        ". Il a actuellement : " + poissonPredateur.getPv() + " PV");
+                    if (poisson.getPv() <= 0) {
 
-                // perte de PV
-                poissonPredateur.setPv(poissonPredateur.getPv() - 1);
+                        System.out.println(poisson.getNom() + " meurt (plus de PV)");
+                        poissons.remove(i);
 
-                System.out.println(poissonPredateur.getNom() + " a maintenant "
-                        + poissonPredateur.getPv() + " PV");
-                System.out.println();
+                    } else {
 
-                // si faible vie → manger
-                if (poissonPredateur.getPv() <= 5) {
+                        // ACTION
+                        if (poisson.getPv() <= 5) {
 
-                    if (poissonPredateur instanceof PoissonCarnivore carnivore) {
+                            System.out.println(poisson.getNom() + " a faim");
 
-                        if (poissons.size() <= 1)
-                            continue;
+                            if (poisson instanceof PoissonCarnivore carnivore) {
 
-                        int indexProie = rand.nextInt(poissons.size());
-                        Poisson poissonProie = poissons.get(indexProie);
+                                if (poissons.size() > 1) {
 
-                        if (poissonPredateur == poissonProie) {
-                            System.out.println("Impossible de se manger soi-même");
-                            continue;
-                        }
+                                    Poisson proie = poissons.get(rand.nextInt(poissons.size()));
 
-                        if (poissonPredateur.getClass() == poissonProie.getClass()) {
-                            System.out.println("Même espèce → impossible de manger");
-                            continue;
-                        }
+                                    if (poisson == proie) {
 
-                        System.out.println(poissonProie.getNom() + " avait " + poissonProie.getPv() + " PV");
+                                        System.out.println("Action impossible : lui-même");
 
-                        carnivore.mangerPoisson(poissonProie);
+                                    } else if (poisson.getClass() == proie.getClass()) {
 
-                        System.out.println(poissonProie.getNom()
-                                + " a été attaqué et a maintenant "
-                                + poissonProie.getPv() + " PV");
+                                        System.out.println("Même espèce, il ne mange pas " + proie.getNom());
 
-                        // test après attaque
-                        if (poissonProie.getPv() <= 0) {
-                            System.out.println(poissonProie.getNom() + " est mort");
+                                    } else {
 
-                            int indexProie2 = poissons.indexOf(poissonProie);
-                            if (indexProie2 != -1) {
-                                poissons.remove(indexProie2); // ✅ correction ici
+                                        System.out.println(poisson.getNom() + " attaque " + proie.getNom());
+
+                                        carnivore.mangerPoisson(proie);
+
+                                        System.out.println(proie.getNom() + " PV : " + proie.getPv());
+
+                                        if (proie.getPv() <= 0) {
+                                            System.out.println(proie.getNom() + " est mort");
+                                            poissons.remove(proie);
+                                        }
+                                    }
+                                }
+
+                            } else if (poisson instanceof PoissonHerbivore herbivore) {
+
+                                if (!algues.isEmpty()) {
+
+                                    Algue algue = algues.get(rand.nextInt(algues.size()));
+
+                                    System.out.println(poisson.getNom() + " mange une algue");
+
+                                    herbivore.mangerAlgue(algue);
+
+                                    System.out.println("Algue PV : " + algue.getPv());
+                                }
+                            }
+
+                        } else {
+
+                            // REPRODUCTION
+                            if (!aDejaReproduit && poissons.size() > 1) {
+
+                                Poisson partenaire = poissons.get(rand.nextInt(poissons.size()));
+
+                                if (poisson == partenaire) {
+
+                                    System.out.println("Reproduction impossible : seul");
+
+                                } else if (poisson.getClass() != partenaire.getClass()) {
+
+                                    System.out.println("Pas même espèce avec " + partenaire.getNom());
+
+                                } else if (poisson.getSexe() == partenaire.getSexe()) {
+
+                                    System.out.println("Même sexe avec " + partenaire.getNom());
+
+                                } else {
+
+                                    System.out.println(poisson.getNom() + " s'accouple avec " + partenaire.getNom());
+
+                                    Sexe sexeBebe = rand.nextBoolean() ? Sexe.MALE : Sexe.FEMELLE;
+
+                                    Poisson bebe = creerBebeSimple(poisson, sexeBebe);
+
+                                    if (bebe != null) {
+                                        poissons.add(bebe);
+                                        System.out.println("Naissance de " + bebe.getNom());
+                                        aDejaReproduit = true;
+                                    }
+                                }
                             }
                         }
-
-                    } else if (poissonPredateur instanceof PoissonHerbivore herbivore) {
-
-                        if (algues.isEmpty())
-                            continue;
-
-                        int indexAlgue = rand.nextInt(algues.size());
-                        Algue algue = algues.get(indexAlgue);
-
-                        herbivore.mangerAlgue(algue);
                     }
                 }
             }
 
-            // condition de fin
+            // Reproduction algues
+            for (int i = 0; i < algues.size(); i++) {
+
+                Algue a = algues.get(i);
+
+                if (algues.size() < 50 && a.getPv() >= 10) {
+
+                    int pv = a.getPv() / 2;
+                    a.setPv(pv);
+
+                    Algue bebe = new Algue();
+                    bebe.setPv(pv);
+
+                    algues.add(bebe);
+
+                    System.out.println("Une algue se divise");
+                }
+            }
+
+            // Résumé du tour
+            System.out.println("Résumé : " + poissons.size() + " poissons / " + algues.size() + " algues");
+
+            // Fin
             if (poissons.size() == 1) {
-                poissonPredateurGagnant = poissons.get(0);
+                gagnant = poissons.get(0);
                 over = true;
             }
 
             if (over) {
-                System.out.println("Fin du jeu ! Le gagnant est : "
-                        + poissonPredateurGagnant.getNom());
+                System.out.println("Fin du jeu. Gagnant : " + gagnant.getNom());
                 break;
             }
         }
+    }
+
+    private static Poisson creerBebeSimple(Poisson parent, Sexe sexe) {
+
+        String nom = parent.getNom() + "Junior";
+
+        if (parent instanceof Merou) return new Merou(nom, sexe);
+        if (parent instanceof Bar) return new Bar(nom, sexe);
+        if (parent instanceof Carpe) return new Carpe(nom, sexe);
+        if (parent instanceof Sole) return new Sole(nom, sexe);
+        if (parent instanceof Thon) return new Thon(nom, sexe);
+        if (parent instanceof PoissonClown) return new PoissonClown(nom, sexe);
+
+        return null;
     }
 }
