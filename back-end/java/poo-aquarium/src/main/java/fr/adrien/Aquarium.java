@@ -76,7 +76,7 @@ public class Aquarium {
                         + poissonPredateur.getPv() + " PV");
                 System.out.println();
 
-                // Si faible vie → manger
+                // si faible vie → manger
                 if (poissonPredateur.getPv() <= 5) {
 
                     if (poissonPredateur instanceof PoissonCarnivore carnivore) {
@@ -85,7 +85,7 @@ public class Aquarium {
 
                         int indexProie = rand.nextInt(poissons.size());
                         Poisson poissonProie = poissons.get(indexProie);
-
+                        
                         if (poissonPredateur == poissonProie) {
                             System.out.println("Impossible de se manger soi-même");
                             continue;

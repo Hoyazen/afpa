@@ -1,5 +1,7 @@
 package fr.adrien;
 
+import java.util.Random;
+
 import fr.adrien.enums.Sexe;
 
 public abstract class Poisson extends EtreVivant {
@@ -10,6 +12,9 @@ public abstract class Poisson extends EtreVivant {
         super(10, 0);
         this.nom = nom;
         this.sexe = sexe;
+
+        Random rand = new Random();
+        this.setAge(rand.nextInt(10));
     }
 
     public String getNom() {
