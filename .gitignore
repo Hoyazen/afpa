@@ -1,3 +1,6 @@
 #les dossiers target des projets maven
 back-end/java/singleton/target
 back-end/java/poo-aquarium/target
+
+#les dossier nodes_modules
+back-end/js/api/node_modules

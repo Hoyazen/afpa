@@ -2,6 +2,8 @@ package fr.adrien;
 
 import java.util.Random;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import fr.adrien.enums.Sexe;
 import fr.adrien.reproduction.ReproductionStrategie;
 
@@ -9,6 +11,7 @@ public abstract class Poisson extends EtreVivant {
 
     private String nom;
     private Sexe sexe;
+    @JsonIgnore
     private ReproductionStrategie reproductionStrategie;
 
     public Poisson(String nom, Sexe sexe, ReproductionStrategie strategie) {
