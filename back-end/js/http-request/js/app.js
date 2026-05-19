@@ -1,55 +1,66 @@
-// URL de l'API : à décommenter lors de la mise en place du requêtage
-// const API_URL = "https://jsonplaceholder.typicode.com/users";
+const URL_API = "https://jsonplaceholder.typicode.com/users";
 
-// TODO : Variable pour stocker les utilisateurs
-// let users = [];
+async function getUsers(url) {
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
 
-/**
- * Récupère les utilisateurs depuis l'API
- *
- * A décommenter lors de la mise en placec du requêtage
- */
-// async function fetchUsers() {
-//   // TODO
-//   // 1. faire une requête fetch vers l'API
-//   // 2. convertir la réponse en JSON
-//   // 3. stocker les utilisateurs dans la variable "users"
-//   // 4. appeler la fonction displayUsers()
-// }
+    console.log(data);
 
-/**
- * Crée une carte HTML pour un utilisateur
- * @param {Object} user Un json qui contient les informations utilisateur
- * @returns {HTMLElement}
- */
-function createUserCard(user) {
-  const card = document.createElement("div");
-
-  // TODO : compléter le contenu de la carte
-  card.innerHTML = `
-    <h2>TODO: name</h2>
-  `;
-
-  return card;
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+  return null;
 }
 
-/**
- * Affiche tous les utilisateurs dans la page
- */
-function displayUsers() {
-  // TODO
-  // 1. Récupérer l'élément #user-directory
-  // 2. Parcourir la liste "users"
-  // 3. Créer une carte pour chaque utilisateur
-  // 4. Ajouter la carte dans le DOM
-}
+let usersPromise = getUsers(URL_API);
 
-/**
- * Point d'entrée de l'application
- */
-function init() {
-  // TODO initialisation de l'interface
-}
+usersPromise.then((usersData) => {
+  // Traitement des données -> on modifie le DOM
 
-// Lancement de l'application
-init();
+  // 1 on cible la grosse div qui contiendra les "cards" des utilisateurs
+  let divGridUsers = document.getElementById("users-cards");
+
+  // 2 on fait un boucle sur le tableau des utilisateurs (usersdata)
+  for (let i = 0; i < usersData.length; i++) {
+    let user = usersData[i];
+    let divContentUser = document.createElement("div");
+    divContentUser.innerHTML = `<div class="user-directory" id="user-directory">
+        <div class="user-directory-title" id="user-directory-title">
+          <h2>${user.name}</h2>
+          <p>@${user.username}</p>
+        </div>
+        <div class="user-directory-info" id="user-directory-info">
+          <div class="user-directory-info-title" id="user-directory-info-title">
+            <h3>Contact</h3>
+          </div>
+          <div class="user-directory-info-content" id="user-directory-info-content">
+            <p>Email: ${user.email}</p>
+            <p>Phone: ${user.phone}</p>
+            <p>Website: ${user.website}</p>
+          </div>
+        </div>
+        <div class="user-directory-info" id="user-directory-info">
+          <div class="user-directory-info-title" id="user-directory-info-title">
+            <h3>Adress</h3>
+          </div>
+          <div class="user-directory-info-content" id="user-directory-info-content">
+            <p>${user.address.street}</p>
+            <p>${user.address.geo.lat} ${user.address.geo.lng}</p>
+          </div>
+        </div>
+      </div>`;
+
+    divGridUsers.appendChild(divContentUser);
+  }
+  // Pour chaque élément du tableau on crée une div qui convient et on l'ajoute à la grosse div
+
+  // Créer une div pour utilisatuer
+  // let userDiv = document.createElement("div");
+  // userDiv.innerHTML = `<h2>Nom : {??????} </h2>`;
+
+  // ajouter la nouvelle div à la grosse div de tous les utilisateurs
+
+  console.log(usersData);
+});
