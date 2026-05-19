@@ -1,0 +1,59 @@
+/* TODO à compléter */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  padding: 20px;
+}
+
+body h1 {
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+#user-directory {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 400px;
+  border: 3px solid #d1d1d1;
+}
+
+.user-directory-title {
+  background-color: #d1d1d1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.user-directory-title h2 {
+  font-size: 24px;
+}
+
+.user-directory-title p {
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.user-directory-info {
+  margin-top: 10px;
+  border-top: 2px solid #d1d1d1;
+}
+
+.user-directory-info-title {
+  padding: 5px 0;
+}
+
+.user-directory-info-title h3 {
+  font-size: 18px;
+}
+
+.user-directory-info-content {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border: 3px dotted #aaaaaa;
+}

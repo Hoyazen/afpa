@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="460"
+   height="300"
+   viewBox="0 0 460 300"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="wireframe-one-card.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.9209734"
+     inkscape:cx="290.9983"
+     inkscape:cy="188.70641"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <!-- Card container -->
+  <rect
+     x="10"
+     y="10"
+     width="440"
+     height="280"
+     rx="12"
+     ry="12"
+     fill="#ffffff"
+     stroke="#444"
+     stroke-width="2"
+     id="rect1" />
+  <!-- Header background -->
+  <rect
+     x="10"
+     y="10"
+     width="440"
+     height="60"
+     fill="#eeeeee"
+     stroke="none"
+     id="rect2"
+     ry="13.251534" />
+  <!-- Name -->
+  <text
+     x="30"
+     y="45"
+     font-size="20"
+     font-weight="bold"
+     font-family="Arial"
+     id="text2">
+    Leanne Graham
+  </text>
+  <!-- Username -->
+  <text
+     x="30"
+     y="65"
+     font-size="13"
+     font-family="Arial"
+     fill="#666"
+     id="text3">
+    @Bret
+  </text>
+  <!-- Divider -->
+  <line
+     x1="20"
+     y1="85"
+     x2="440"
+     y2="85"
+     stroke="#bbb"
+     id="line3" />
+  <!-- Contact section -->
+  <text
+     x="30"
+     y="110"
+     font-size="14"
+     font-weight="bold"
+     font-family="Arial"
+     id="text4">
+    Contact
+  </text>
+  <rect
+     x="30"
+     y="120"
+     width="400"
+     height="70"
+     fill="#f5f5f5"
+     stroke="#aaa"
+     stroke-dasharray="4"
+     id="rect4" />
+  <text
+     x="40"
+     y="145"
+     font-size="13"
+     font-family="Arial"
+     id="text5">
+    Email: Sincere@april.biz
+  </text>
+  <text
+     x="40"
+     y="165"
+     font-size="13"
+     font-family="Arial"
+     id="text6">
+    Phone: 1-770-736-8031 x56442
+  </text>
+  <text
+     x="40"
+     y="185"
+     font-size="13"
+     font-family="Arial"
+     id="text7">
+    Website: hildegard.org
+  </text>
+  <!-- Address section -->
+  <text
+     x="30"
+     y="215"
+     font-size="14"
+     font-weight="bold"
+     font-family="Arial"
+     id="text8">
+    Address
+  </text>
+  <rect
+     x="30"
+     y="225"
+     width="400"
+     height="50"
+     fill="#f5f5f5"
+     stroke="#aaa"
+     stroke-dasharray="4"
+     id="rect8" />
+  <text
+     x="40"
+     y="248"
+     font-size="13"
+     font-family="Arial"
+     id="text9">
+    Kulas Light, Apt. 556
+  </text>
+  <text
+     x="40"
+     y="265"
+     font-size="13"
+     font-family="Arial"
+     id="text10">
+    Gwenborough, 92998-3874
+  </text>
+</svg>
