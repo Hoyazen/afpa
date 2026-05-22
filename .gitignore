@@ -5,3 +5,4 @@ back-end/java/poo-aquarium/target
 #les dossier nodes_modules
 back-end/js/api/node_modules
 back-end/js/APIRestGenerique/node_modules
+back-end/js/api_rest_jwt/node_modules
