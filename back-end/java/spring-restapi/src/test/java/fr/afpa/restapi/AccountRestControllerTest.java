@@ -146,7 +146,9 @@ class AccountRestControllerTest {
         accountDao.save(account);
 
         mockMvc.perform(put(String.format("/accounts/%d", account.getId())).contentType(MediaType.APPLICATION_JSON)
-                .content(String.format("{\"id\":\"%d\", \"firstName\":\"Johnny\", \"lastName\":\"Boy\", \"email\":\"johnny.boy@gmail.com\"}", account.getId())))
+                .content(String.format(
+                        "{\"id\":\"%d\", \"firstName\":\"Johnny\", \"lastName\":\"Boy\", \"email\":\"johnny.boy@gmail.com\"}",
+                        account.getId())))
                 .andExpect(status().isNoContent());
     }
 
@@ -161,4 +163,3 @@ class AccountRestControllerTest {
                 .andExpect(status().isNoContent());
     }
 }
-

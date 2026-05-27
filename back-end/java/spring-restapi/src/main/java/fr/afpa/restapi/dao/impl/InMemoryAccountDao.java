@@ -11,18 +11,10 @@ import org.springframework.stereotype.Repository;
 import fr.afpa.restapi.dao.AccountDao;
 import fr.afpa.restapi.model.Account;
 
-/**
- * Une implémentation de {@link AccountDao} basée sur un
- * {@link java.util.HashMap}
- */
 @Repository
 public class InMemoryAccountDao implements AccountDao {
 
-    /**
-     * Table de hachage permettant de stocker les objets de {@link Account}
-     */
     private Map<Long, Account> accountMap = new HashMap<>();
-
     private long idSequence = 1L;
 
     @Override
