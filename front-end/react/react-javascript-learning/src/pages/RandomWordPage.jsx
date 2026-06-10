@@ -29,11 +29,17 @@ const RandomWordPage = () => {
     useEffect(() => {
         // TODO mettre quelque chose ici
         // Question, quand se déclenche la fonction associée à ce "useEffect" ?
+        if (firstWord !== "") {
+            alert("Clic sur le bouton de génération de mot 1");
+        }
     }, [firstWord]);
 
     useEffect(() => {
         // TODO mettre quelque chose ici
         // Question, quand se déclenche la fonction associée à ce "useEffect" ?
+        if (secondWord !== "") {
+            alert("Clic sur le bouton de génération de mot 2");
+        }
     }, [secondWord]);
 
     useEffect(() => {
@@ -44,13 +50,16 @@ const RandomWordPage = () => {
     useEffect(() => {
         // TODO mettre quelque chose ici
         // Question, quand se déclenche la fonction associée à ce "useEffect" ?
-
+        if (firstWord !== "" || secondWord !== "") {
+            alert("Clic sur un des boutons de génération de mot");
+        }
 
         // Si dans une lambda de useEffect nous avons un "return" alors nous pouvons renvoyer une fonction de démontage
         // Cette fonction sera déclenchée lorsque le composant sera retiré du DOM (par exemple si nous changeons de page)
         return () => {
             // TODO : Mettre ici le code à exécuter lors du démontage
             // Par exemple : ajoutez un appel à la fonction Javascript « alert() » permettant d'indiquer un message particulier
+            alert("Le composant va être démonté");
         };
     });
 
@@ -76,10 +85,10 @@ const RandomWordPage = () => {
     }
 
     return (<>
-                <div> {firstWord} - {secondWord} </div>
-                <button onClick={handleClick1}>Changer premier mot</button>
-                <button onClick={handleClick2}>Changer second mot</button>
-            </>
+        <div> {firstWord} - {secondWord} </div>
+        <button onClick={handleClick1}>Changer premier mot</button>
+        <button onClick={handleClick2}>Changer second mot</button>
+    </>
     );
 }
 

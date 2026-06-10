@@ -6,8 +6,11 @@ import styles from './UserCard.module.css'; // Import css modules stylesheet as 
 export const UserCard = ({ user }) => {
 
     return (
-        <div className={ styles.userCard }>
-            {/* TODO compléter le code pour interface graphique */user.name}
-        </div>
+        <ul className={styles.userCard}>
+            <li>{user.name}</li>
+            <li>{user.email}</li>
+            <li>{user.phone}</li>
+            <li>{user.company.name}</li>
+        </ul>
     )
 }
