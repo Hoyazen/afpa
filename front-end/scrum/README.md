@@ -72,15 +72,16 @@
 - Jira, Trello, Azure DevOps, Asana, Monday.com.
 
 ## Ptit mémo en vif
-Le **Product Owner** représente le client et décide quelles fonctionnalités sont les plus importantes
-Le **Scrum Master** aide l'équipe à appliquer correctement la méthode Scrum et à résoudre les blocages
-**L'équipe de développement** réalise les tâches et développe le produit
-Le **Product Backlog** est la liste complète de tout ce qui doit être réalisé dans le projet
-Le **Sprint Backlog** est la liste des tâches que l'équipe s'engage à réaliser pendant le Sprint en cours
-Le **Sprint** est une période de travail courte (généralement de 1 à 4 semaines) durant laquelle l'équipe développe une partie du produit
-Le **Daily Scrum** est une réunion quotidienne de 15 minutes où chacun explique ce qu'il a fait, ce qu'il va faire et les éventuels problèmes rencontrés
-Le **Sprint Planning** est la réunion qui sert à choisir les tâches qui seront réalisées pendant le Sprint
-Le **Sprint Review** est la réunion de fin de Sprint où l'équipe présente ce qu'elle a développé
-La **Sprint Retrospective** est la réunion de fin de Sprint où l'équipe réfléchit à ce qui a bien fonctionné et à ce qui peut être amélioré
-Une **User Story** est une description simple d'un besoin ou d'une fonctionnalité vue du point de vue de l'utilisateur
-**Kanban** est un tableau qui permet de visualiser l'avancement des tâches (À faire, En cours, Terminé)
+
+- Le **Product Owner** représente le client et décide quelles fonctionnalités sont les plus importantes
+- Le **Scrum Master** aide l'équipe à appliquer correctement la méthode Scrum et à résoudre les blocages
+- **L'équipe de développement** réalise les tâches et développe le produit
+- Le **Product Backlog** est la liste complète de tout ce qui doit être réalisé dans le projet
+- Le **Sprint Backlog** est la liste des tâches que l'équipe s'engage à réaliser pendant le Sprint en cours
+- Le **Sprint** est une période de travail courte (généralement de 1 à 4 semaines) durant laquelle l'équipe développe une partie du produit
+- Le **Daily Scrum** est une réunion quotidienne de 15 minutes où chacun explique ce qu'il a fait, ce qu'il va faire et les éventuels problèmes rencontrés
+- Le **Sprint Planning** est la réunion qui sert à choisir les tâches qui seront réalisées pendant le Sprint
+- Le **Sprint Review** est la réunion de fin de Sprint où l'équipe présente ce qu'elle a développé
+- La **Sprint Retrospective** est la réunion de fin de Sprint où l'équipe réfléchit à ce qui a bien fonctionné et à ce qui peut être amélioré
+- Une **User Story** est une description simple d'un besoin ou d'une fonctionnalité vue du point de vue de l'utilisateur
+- **Kanban** est un tableau qui permet de visualiser l'avancement des tâches (À faire, En cours, Terminé)
