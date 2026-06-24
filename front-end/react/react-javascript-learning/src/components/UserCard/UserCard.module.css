@@ -1,8 +1,10 @@
 .userCard {
-    background-color: #383838;
+    background-color: floralwhite;
     padding: 20px;
-
     border-radius: 10px;
+    width: 200px;
+}
 
-    /* TODO adapter le css pour un rendu OK */
+.userCard li {
+    list-style-type: none;
 }

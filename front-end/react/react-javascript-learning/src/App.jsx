@@ -20,7 +20,7 @@ function App() {
         <header>
           <h1>React JavaScript training</h1>
 
-          <nav>
+          <nav className='nav'>
             {/* Les composants "Link" vont ré-écrire la route dans l'url */}
             <Link to="/counter">Compteur</Link>
             <Link to="/tasks">Liste de tâches</Link>

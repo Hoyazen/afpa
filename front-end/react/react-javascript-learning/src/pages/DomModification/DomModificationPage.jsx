@@ -22,6 +22,7 @@ const DomModificationPage = () => {
     // référence vers le titre
     const titleRef = useRef(null);
     // TODO référence vers le paragraphe
+    const paragraphRef = useRef(null);
 
     /**
      * Change la couleur du titre
@@ -37,7 +38,8 @@ const DomModificationPage = () => {
             // title.style
             // ceci provient du JS.
             // plus d'information sur la modification de la couleur en JS : https://www.w3schools.com/jsref/prop_style_color.asp
-            
+            title.style.color = color;
+
         }
     };
 
@@ -52,22 +54,14 @@ const DomModificationPage = () => {
      */
     const toggleParagraphStyle = () => {
         // tentative de récupération de l'élément HTML paragraphe
-        let paragraph = "test";
+        let paragraph = paragraphRef.current;
 
         if (paragraph != null) {
             // il est possible d'activer ou désactiver une classe en uilisant la méthode JS "toggle"
             // exemple d'utilisation : https://www.w3schools.com/howto/howto_js_toggle_class.asp
 
-            // vérification si classe "highlighted" présente
-            const isHighlighted = paragraph.classList.contains(styles.highlighted);
-
-            if (isHighlighted) { // si c'est bien "highlighted"
-                // TODO insérer un toggle pour passer en normal
-                // paragraph.classList.toggle( ????????? )
-            } else {
-                // TODO insérer un toggle pour passer en highlighted
-
-            }
+            paragraph.classList.toggle(styles.highlighted);
+            paragraph.classList.toggle(styles.normal);
         }
     };
 
@@ -96,7 +90,7 @@ const DomModificationPage = () => {
                     Vert
                 </button>
             </div>
-            <p className={styles.paragraph + ' ' + styles.normal}>
+            <p ref={paragraphRef} className={styles.paragraph + ' ' + styles.normal}>
                 Paragraphe avec style modifiable
             </p>
             <button
